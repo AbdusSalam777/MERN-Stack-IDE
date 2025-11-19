@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { UserButton, SignedIn, SignedOut } from "@clerk/clerk-react";
 
 export const Navbar = () => {
   return (
@@ -14,9 +15,18 @@ export const Navbar = () => {
         <Link to="/projects" className="text-gray-300 hover:text-white transition-colors">Projects</Link>
       </div>
 
-      <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition">
-        Sign In
-      </button>
+      <SignedOut>
+        <Link
+          to="/sign-in"
+          className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition"
+        >
+          Sign In
+        </Link>
+      </SignedOut>
+
+      <SignedIn>
+        <UserButton appearance={{ elements: { avatarBox: "w-10 h-10" } }} />
+      </SignedIn>
     </nav>
   );
 };
