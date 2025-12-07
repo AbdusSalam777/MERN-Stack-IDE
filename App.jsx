@@ -9,10 +9,12 @@ import HomePage from "./pages/HomePage";
 import SignInPage from "./pages/SignInPage";
 import EditorComp from "./pages/Editor";
 import ProjectsPage from "./pages/ProjectsPage";
+import AboutPage from "./pages/AboutPage";
 
 // Components
 import { Navbar } from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { Footer } from "./components/Footercomponent";
 
 function App() {
   return (
@@ -28,6 +30,12 @@ function App() {
             <SignedOut>
               <SignInPage />
             </SignedOut>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+           <AboutPage/>
           }
         />
         <Route
@@ -68,6 +76,7 @@ function App() {
         {/* ---------------- CATCH ALL ---------------- */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      <Footer/>
 
       <ToastContainer
         position="top-center"
