@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
 import { Navbar } from "../components/Navbar";
 import { Button } from "../components/ui/button";
+import { toast } from "react-toastify";
 
 const EditorComp = () => {
   const { id } = useParams();
@@ -55,7 +56,7 @@ const EditorComp = () => {
     });
 
     setShowPopup(false);
-    alert("✅ Project Saved Successfully!");
+    toast.success("Project added successfully!");
   };
 
   return (
