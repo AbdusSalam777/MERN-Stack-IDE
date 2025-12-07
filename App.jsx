@@ -10,9 +10,9 @@ import SignInPage from "./pages/SignInPage";
 import EditorComp from "./pages/Editor";
 import ProjectsPage from "./pages/ProjectsPage";
 import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
 
 // Components
-import { Navbar } from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { Footer } from "./components/Footercomponent";
 
@@ -36,6 +36,13 @@ function App() {
           path="/about"
           element={
            <AboutPage/>
+          }
+        />
+
+        <Route
+          path="/contact"
+          element={
+           <ContactPage/>
           }
         />
         <Route
