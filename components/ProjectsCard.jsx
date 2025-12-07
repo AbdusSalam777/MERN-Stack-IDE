@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
+import { toast } from "react-toastify";
 
 import mergeSortAsc from "../../Sorting/MergeSort";
 import bubbleSortDesc from "../../Sorting/BubbleSort";
@@ -100,11 +101,11 @@ export const ProjectsCard = () => {
 
     setShowPopup(false);
     setEditProject(null);
+
+      toast.info("Project updated successfully!");
   };
 
   const deleteProject = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this project?"))
-      return;
 
     // 1. DELETE FROM DATABASE
     await fetch(`http://localhost:3000/projects/${id}`, {
@@ -116,6 +117,8 @@ export const ProjectsCard = () => {
 
     // 3. UPDATE REACT STATE (UI REFRESH)
     setProjects(linkedList.toArray());
+
+    toast.success("Project deleted successfully!");
   };
 
   return (
@@ -126,14 +129,14 @@ export const ProjectsCard = () => {
         <div className="flex gap-3">
           <button
             onClick={sortAsc}
-            className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded"
+            className="px-4 py-2 bg-green-600 hover:bg-black active:scale-90 duration-300 ease-in text-white rounded"
           >
             Sort A → Z
           </button>
 
           <button
             onClick={sortDesc}
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded"
+            className="px-4 py-2 bg-blue-600  text-white rounded  hover:bg-black active:scale-90 duration-300 ease-in"
           >
             Sort Z → A
           </button>
