@@ -14,6 +14,7 @@ export const Navbar = () => {
         <Link to="/editor" className="text-gray-300 hover:text-white transition-colors">Editor</Link>
         <Link to="/projects" className="text-gray-300 hover:text-white transition-colors">Projects</Link>
         <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About</Link>
+        <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link>
       </div>
 
       <SignedOut>
