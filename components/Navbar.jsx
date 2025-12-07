@@ -13,6 +13,7 @@ export const Navbar = () => {
         <Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link>
         <Link to="/editor" className="text-gray-300 hover:text-white transition-colors">Editor</Link>
         <Link to="/projects" className="text-gray-300 hover:text-white transition-colors">Projects</Link>
+        <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About</Link>
       </div>
 
       <SignedOut>
