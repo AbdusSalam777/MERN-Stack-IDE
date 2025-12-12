@@ -11,6 +11,7 @@ import EditorComp from "./pages/Editor";
 import ProjectsPage from "./pages/ProjectsPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import OverviewPage from "./pages/overviewPage";
 
 // Components
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -36,6 +37,13 @@ function App() {
           path="/about"
           element={
            <AboutPage/>
+          }
+        />
+
+        <Route
+          path="/overview"
+          element={
+           <OverviewPage/>
           }
         />
 
