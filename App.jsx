@@ -16,6 +16,7 @@ import OverviewPage from "./pages/overviewPage";
 // Components
 import ProtectedRoute from "./components/ProtectedRoute";
 import { Footer } from "./components/Footercomponent";
+import RequestHistory from "./components/RequestHistory";
 
 function App() {
   return (
@@ -37,6 +38,13 @@ function App() {
           path="/about"
           element={
            <AboutPage/>
+          }
+        />
+
+          <Route
+          path="/requests"
+          element={
+           <RequestHistory/>
           }
         />
 
